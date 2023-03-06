@@ -5,7 +5,7 @@ RUN pip3 install pyOpenSSL --upgrade
 RUN pip3 install sagemaker-training
 
 # Copies the training code inside the container
-COPY ./code /opt/ml/code
+#COPY ./code /opt/ml/code
 WORKDIR /opt/ml/code
 
 # Defines train.py as script entrypoint

@@ -166,6 +166,12 @@ class code_pipeline_handler():
         print ("Argments for CodeBuild below:")
         pprint (dicCodePipelineTemplate)
         
+    def delete_pipeline(self, strPipeLineName):
+        
+        strQuery = ''.join(['aws codepipeline delete-pipeline --name ', '"', str(strPipeLineName), '"'])
+        strResponse = os.popen(strQuery).read()
+        pprint (strResponse)
+        
     def start_pipeline_execution(self, strPipeLineName):
         
         response = self.pipeline_client.start_pipeline_execution(name=strPipeLineName,)
